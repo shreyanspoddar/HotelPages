@@ -173,30 +173,31 @@
 
             <input type="date" id="checkin"></div>
 
-          <div style="position: relative; top:-55px; right:-250px;">CHECK OUT:<br><input type="date" id="checkout"></div>
+          <div style="position: relative; top:-55px; right:-250px;">CHECK OUT:<br><input type="date" id="checkout">
+          </div>
 
           <div>NUMBER OF GUEST:
             <div>ADULT</div>
-            <form><select name="adult">
+            <form>
+              <select name="adult">
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
                 <option value="4">4</option>
                 <option value="5+">5+</option>
               </select>
-
             </form>
           </div>
           <div style="position: relative; right:-70px; top:-50px;">CHILDREN
-            <form><select name="child">
+            <form>
+              <select name="child">
+                <option value="0">0</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
                 <option value="4">4</option>
                 <option value="5+">5+</option>
               </select>
-
-
             </form>
           </div>
           <div style="position: relative; top:-100px; right:-250px;">
@@ -415,14 +416,14 @@
     let date = dd.getDate();
     let month = dd.getMonth() + 1;
     let year = dd.getFullYear();
-    if (date <10){
-      date = "0"+ date;
+    if (date < 10) {
+      date = "0" + date;
     }
-    if(month < 10){
+    if (month < 10) {
       month = "0" + month;
     }
     const today = `${year}-${month}-${date}`;
-    console.log(date , month , year , today)
+    console.log(date, month, year, today)
     document.querySelector('#checkin').setAttribute('min', today);
     document.querySelector('#checkout').setAttribute('min', today);
   </script>
